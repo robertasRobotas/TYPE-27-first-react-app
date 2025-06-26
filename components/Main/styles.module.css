@@ -1,7 +1,14 @@
 .main {
   height: 700px;
   background-color: burlywood;
+}
 
+.main h1 {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.main > div {
   display: flex;
   flex-direction: row;
   justify-content: center;

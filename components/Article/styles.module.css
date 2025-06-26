@@ -8,6 +8,7 @@
   padding: 0.5rem;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .article img {
@@ -18,4 +19,8 @@
 
 .article h2 {
   font-size: 1rem;
+}
+
+.article:hover {
+  scale: 1.02;
 }
