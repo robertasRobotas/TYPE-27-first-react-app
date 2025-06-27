@@ -1,6 +1,7 @@
 .main {
-  height: 700px;
+  min-height: 700px;
   background-color: burlywood;
+  padding: 2rem;
 }
 
 .main h1 {
@@ -13,5 +14,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
