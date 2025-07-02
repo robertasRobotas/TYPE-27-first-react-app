@@ -1,14 +1,13 @@
 import styles from "./styles.module.css";
+import personImg from "../../assets/person.png";
 
-const Article = ({ title, imgUrl }) => {
-  const onCardClick = (xxx) => {
-    console.log(title);
-  };
+const Article = ({ character, onDelete }) => {
+  const img = !!character.image ? character.image : personImg.src;
 
   return (
-    <div onClick={onCardClick} className={styles.article}>
-      <img src={imgUrl} />
-      <h2>{title}</h2>
+    <div onClick={() => onDelete(character.id)} className={styles.article}>
+      <img src={img} />
+      <h2>{character.name}</h2>
     </div>
   );
 };

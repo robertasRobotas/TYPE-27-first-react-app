@@ -1,20 +1,18 @@
 import styles from "./styles.module.css";
 
-const Header = ({ logo }) => {
+const Header = ({ logo, linksArray }) => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>{logo}</div>
       <nav>
         <ul>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Profile</a>
-          </li>
-          <li>
-            <a href="#">Contacts</a>
-          </li>
+          {linksArray.map((la) => {
+            return (
+              <li>
+                <a href={la.link}>{la.title}</a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>

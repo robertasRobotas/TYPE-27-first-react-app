@@ -6,7 +6,7 @@ import Footer from "../components/Fotter/Footer";
 import Spinner from "../components/Spinner/Spinner";
 const MainPage = () => {
   const [logoText, setLogoText] = useState("TYPE 27");
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(null);
 
   const fetchCharacters = async () => {
     const response = await axios.get(
@@ -20,11 +20,27 @@ const MainPage = () => {
     fetchCharacters();
   }, []);
 
+  const linksArray = [
+    { link: "/home", title: "Home" },
+    { link: "/about", title: "About" },
+    { link: "/contact", title: "Contact" },
+  ];
+
+  const onCharactersDelete = () => {
+    setCharacters([]);
+  };
+
   return (
     <>
-      <Header logo={logoText} />
-      {characters.length > 0 ? (
-        <Main setLogoText={setLogoText} characters={characters} />
+      <Header logo={logoText} linksArray={linksArray} />
+      <button onClick={onCharactersDelete}>remove all characters</button>
+
+      {characters ? (
+        <Main
+          setLogoText={setLogoText}
+          characters={characters}
+          setCharacters={setCharacters}
+        />
       ) : (
         <Spinner />
       )}
