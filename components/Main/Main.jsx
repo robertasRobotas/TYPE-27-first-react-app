@@ -10,8 +10,6 @@ const Main = ({ setLogoText, characters, setCharacters }) => {
     setCharacters(filteredCharacters);
   };
 
-  console.log(characters);
-
   return (
     <main className={styles.main}>
       {isShowArticle && <h1>Articles</h1>}

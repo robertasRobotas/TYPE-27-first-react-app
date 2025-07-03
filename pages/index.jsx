@@ -4,9 +4,12 @@ import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import Footer from "../components/Fotter/Footer";
 import Spinner from "../components/Spinner/Spinner";
+import Button from "../components/Button/Button";
+
 const MainPage = () => {
   const [logoText, setLogoText] = useState("TYPE 27");
   const [characters, setCharacters] = useState(null);
+  const [count, setCount] = useState(0);
 
   const fetchCharacters = async () => {
     const response = await axios.get(
@@ -33,7 +36,21 @@ const MainPage = () => {
   return (
     <>
       <Header logo={logoText} linksArray={linksArray} />
-      <button onClick={onCharactersDelete}>remove all characters</button>
+      <Button
+        type="WARNING"
+        onClick={() => {
+          setCount(count + 1);
+        }}
+        title="+"
+      />
+      {count}
+      <Button
+        type="DANGER"
+        onClick={() => {
+          setCount((prevState) => prevState - 1);
+        }}
+        title="-"
+      />
 
       {characters ? (
         <Main

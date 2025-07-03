@@ -1,0 +1,30 @@
+.button {
+  padding: 0.5rem;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  scale: 1.03;
+}
+
+.DEFAULT {
+  background-color: rgb(63, 63, 194);
+}
+
+.WARNING {
+  background-color: rgb(194, 168, 63);
+}
+
+.DANGER {
+  background-color: rgb(194, 63, 63);
+}
+
+.disabled {
+  background-color: rgb(211, 207, 203);
+  cursor: not-allowed;
+}
