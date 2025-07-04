@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.wrapper img {
+  width: 300px;
+}
+
+.alternativeNames {
+  display: flex;
+  gap: 1rem;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alternativeName {
+  padding: 0.4rem;
+  border: 1px solid black;
+}

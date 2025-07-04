@@ -1,14 +1,17 @@
 import styles from "./styles.module.css";
 import personImg from "../../assets/person.png";
+import Link from "next/link";
 
-const Article = ({ character, onDelete }) => {
+const Article = ({ character }) => {
   const img = !!character.image ? character.image : personImg.src;
 
   return (
-    <div onClick={() => onDelete(character.id)} className={styles.article}>
-      <img src={img} />
-      <h2>{character.name}</h2>
-    </div>
+    <Link href={`/character/${character.id}`}>
+      <div className={styles.article}>
+        <img src={img} />
+        <h2>{character.name}</h2>
+      </div>
+    </Link>
   );
 };
 

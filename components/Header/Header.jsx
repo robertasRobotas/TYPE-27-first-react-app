@@ -2,8 +2,14 @@ import styles from "./styles.module.css";
 import burgerBtn from "../../assets/burger-btn.svg";
 import { useState } from "react";
 
-const Header = ({ logo, linksArray }) => {
+const Header = ({ logo }) => {
   const [isHeaderOpen, setHeaderOpen] = useState(false);
+
+  const linksArray = [
+    { link: "/home", title: "Home" },
+    { link: "/about", title: "About" },
+    { link: "/contact", title: "Contact" },
+  ];
 
   return (
     <>

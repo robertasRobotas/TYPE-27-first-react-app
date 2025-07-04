@@ -5,6 +5,7 @@ import Main from "../components/Main/Main";
 import Footer from "../components/Fotter/Footer";
 import Spinner from "../components/Spinner/Spinner";
 import Button from "../components/Button/Button";
+import Link from "next/link";
 
 const MainPage = () => {
   const [logoText, setLogoText] = useState("TYPE 27");
@@ -23,19 +24,13 @@ const MainPage = () => {
     fetchCharacters();
   }, []);
 
-  const linksArray = [
-    { link: "/home", title: "Home" },
-    { link: "/about", title: "About" },
-    { link: "/contact", title: "Contact" },
-  ];
-
   const onCharactersDelete = () => {
     setCharacters([]);
   };
 
   return (
     <>
-      <Header logo={logoText} linksArray={linksArray} />
+      <Header logo={logoText} />
       <Button
         type="WARNING"
         onClick={() => {
@@ -51,6 +46,8 @@ const MainPage = () => {
         }}
         title="-"
       />
+
+      <Link href="/about">About</Link>
 
       {characters ? (
         <Main
